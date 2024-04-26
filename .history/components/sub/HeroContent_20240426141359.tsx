@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import {
   slideInFromLeft,
@@ -11,15 +11,6 @@ import { SparklesIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 
 const HeroContent = () => {
-  const [yPosition, setYPosition] = useState(20);
-
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setYPosition((prevY) => (prevY === 20 ? -20 : 20));
-    }, 1500); // Adjust the interval time as needed
-
-    return () => clearInterval(intervalId);
-  }, []);
   return (
     <motion.div
       initial="hidden"
@@ -64,15 +55,12 @@ const HeroContent = () => {
         </motion.a>
       </div>
       <motion.div
-        animate={{ y: yPosition }}
-        transition={{
-          y: {
-            yoyo: Infinity,
-            duration: 3,
-            ease: "easeInOut",
-          },
+        initial={{ y: 20, opacity: 0 }}
+        animate={{
+          y: -20,
+          opacity: 1,
+          transition: { yoyo: Infinity, duration: 0.8, ease: "easeInOut" },
         }}
-        style={{ display: "inline-block" }}
         className="w-full h-full flex justify-center items-center"
       >
         <Image

@@ -68,11 +68,11 @@ const HeroContent = () => {
         transition={{
           y: {
             yoyo: Infinity,
-            duration: 3,
-            ease: "easeInOut",
+            duration: 1.5,
+            ease: 'easeInOut',
           },
         }}
-        style={{ display: "inline-block" }}
+        style={{ display: 'inline-block' }} 
         className="w-full h-full flex justify-center items-center"
       >
         <Image

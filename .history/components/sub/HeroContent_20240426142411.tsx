@@ -68,7 +68,7 @@ const HeroContent = () => {
         transition={{
           y: {
             yoyo: Infinity,
-            duration: 3,
+            duration: 2,
             ease: "easeInOut",
           },
         }}

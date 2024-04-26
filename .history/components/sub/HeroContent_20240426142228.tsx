@@ -64,15 +64,11 @@ const HeroContent = () => {
         </motion.a>
       </div>
       <motion.div
-        animate={{ y: yPosition }}
-        transition={{
-          y: {
-            yoyo: Infinity,
-            duration: 3,
-            ease: "easeInOut",
-          },
+        style={{
+          y: yPosition,
+          opacity: opacity,
+          display: "inline-block", // Ensures the div takes only as much width as necessary
         }}
-        style={{ display: "inline-block" }}
         className="w-full h-full flex justify-center items-center"
       >
         <Image

@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import {
   slideInFromLeft,
@@ -11,10 +11,12 @@ import { SparklesIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 
 const HeroContent = () => {
+  const [opacity, setOpacity] = useState(0);
   const [yPosition, setYPosition] = useState(20);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
+      setOpacity((prevOpacity) => (prevOpacity === 0 ? 1 : 0));
       setYPosition((prevY) => (prevY === 20 ? -20 : 20));
     }, 1500); // Adjust the interval time as needed
 
@@ -64,15 +66,21 @@ const HeroContent = () => {
         </motion.a>
       </div>
       <motion.div
-        animate={{ y: yPosition }}
+        initial={{ y: 0, opacity: 0 }}
+        animate={{ y: [-20, 20, -20], opacity: [1, 0.5, 1] }}
         transition={{
           y: {
-            yoyo: Infinity,
-            duration: 3,
+            loop: Infinity, // Loop the animation infinitely
+            duration: 2,
+            ease: "easeInOut",
+          },
+          opacity: {
+            loop: Infinity, // Loop the animation infinitely
+            duration: 2,
             ease: "easeInOut",
           },
         }}
-        style={{ display: "inline-block" }}
+        style={{ display: "inline-block" }} // Ensures the div takes only as much width as necessary
         className="w-full h-full flex justify-center items-center"
       >
         <Image
