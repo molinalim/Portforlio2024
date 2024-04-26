@@ -23,7 +23,7 @@ const HeroContent = () => {
         >
           <SparklesIcon className="text-[#b49bff] mr-[10px] h-5 w-5" />
           <h1 className="Welcome-text text-[13px]">
-            Fullstack Developer Portfolio
+            ServiceNow Developer Portfolio
           </h1>
         </motion.div>
         <motion.div
@@ -43,7 +43,7 @@ const HeroContent = () => {
           variants={slideInFromLeft(0.8)}
           className="text-lg text-gray-400 my-5 max-w-[600px]"
         >
-          I&apos;m a Full Stack Software Engineer with experience in Website,
+          I&apos;m a ServiceNow DevOps Engineer with experience in Website,
           Mobile, and Software development. Check out my projects and skills.
         </motion.p>
         <motion.a
@@ -58,8 +58,8 @@ const HeroContent = () => {
         className="w-full h-full flex justify-center items-center"
       >
         <Image
-          src="/mainIconsdark.svg"
-          alt="work icons"
+          src="/astronaut.png"
+          alt="Floating Astronaut"
           height={650}
           width={650}
         />
