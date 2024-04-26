@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import {
   slideInFromLeft,
   slideInFromRight,
-  slideInFromTop
+  slideInFromTop,
 } from "@/utils/motion";
 import { SparklesIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
