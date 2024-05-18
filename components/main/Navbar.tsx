@@ -1,6 +1,7 @@
 import { Socials } from "@/constants";
 import Image from "next/image";
 import React from "react";
+import Typewriter from "typewriter-effect";
 
 const Navbar = () => {
   return (
@@ -11,7 +12,7 @@ const Navbar = () => {
           className="h-auto w-auto flex flex-row items-center"
         >
           <Image
-            src="/NavLogo.png"
+            src="/icon.png"
             alt="logo"
             width={70}
             height={70}
@@ -19,7 +20,7 @@ const Navbar = () => {
           />
 
           <span className="font-bold ml-[10px] hidden md:block text-gray-300">
-            WebChain Dev
+            Molina Lim
           </span>
         </a>
 
@@ -39,13 +40,19 @@ const Navbar = () => {
 
         <div className="flex flex-row gap-5">
           {Socials.map((social) => (
-            <Image
-              src={social.src}
-              alt={social.name}
+            <a
+              id="emailLnk"
+              href="mailto:limmolina99@gmail.com"
               key={social.name}
-              width={24}
-              height={24}
-            />
+            >
+              <Image
+                src={social.src}
+                alt={social.name}
+                key={social.name}
+                width={70}
+                height={70}
+              />
+            </a>
           ))}
         </div>
       </div>

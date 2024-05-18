@@ -56,28 +56,11 @@ const HeroContent = () => {
           Mobile, and Software development. Check out my projects and skills.
         </motion.p>
         <motion.a
-          href="/molinalim_cv.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
           variants={slideInFromLeft(1)}
           className="py-2 button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px]"
         >
-          Visit My CV Planet!
+          Learn More!
         </motion.a>
-        <motion.div
-          animate={{ y: yPosition }}
-          transition={{
-            y: {
-              yoyo: Infinity,
-              duration: 3,
-              ease: "easeInOut",
-            },
-          }}
-          style={{ display: "inline-block" }}
-          className="w-full h-full flex justify-center items-center"
-        >
-          <Image src="/CV.png" alt="My CV" height={200} width={200} />
-        </motion.div>
       </div>
       <motion.div
         animate={{ y: yPosition }}
